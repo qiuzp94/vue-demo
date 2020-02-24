@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <div>{{num}}</div>
+        <input type="button" value="点击1" v-on:click="num++">
+        <input type="button" value="点击2" @click="num++">
+        <input type="button" value="点击3" v-on:click='handle()'>
+        <input type="button" value="点击4" v-on:click="handle">
+        <input type="button" value="点击5" @click="handle">
+
+    </div>
+</body>
+<script src="./vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            num: 0, 
+        },
+        methods:{
+            handle:function(){
+                this.num++
+            }
+        }
+
+    });
+
+</script>
+
+</html>
