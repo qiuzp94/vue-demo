@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-press-key</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form action="">
+            <div>
+                用户名
+                <input type="text" v-model="uname" v-on:keyup.delete="clearContent">
+            </div>
+            <div>
+                密码
+                <input type="text" v-model="pwd" v-on:keyup.enter="handleSubmit">
+            </div>
+            <div>
+                <input type="button" value="提交" v-on:click="handleSubmit">
+            </div>
+        </form>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                uname:'',
+                pwd:''
+            },
+            methods:{
+                clearContent:function(){
+                    this.uname=''
+                },
+                handleSubmit:function(){
+                    console.log(this.uname,this.pwd)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
