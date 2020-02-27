@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>样式绑定-数组模式</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+<style>
+    .active {
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+    }
+
+    .error {
+        background-color: yellow;
+    }
+</style>
+<div id="app">
+    <div v-bind:class=[activeClass,errorClass]>测试样式</div>
+    <button v-on:click="handle">切换</button>
+</div>
+
+<body>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                activeClass: 'active',
+                ErrorClass: 'error'
+            },
+            methods: {
+                handle: function () {
+                    this.activeClass = '',
+                    this.errorClass = ''
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
