@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性绑定</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <a v-bind:href="url">百度</a>
+        <a :href="url1">hao123</a>
+        <button v-on:click="handle">切换跳转</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                url: 'https://baidu.com',
+                url1:'https://hao123.com'
+            },
+            methods: {
+                handle: function () {
+                    this.url = 'https://cctv.com'
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
