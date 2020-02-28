@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>样式绑定-语法细节</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+<style>
+    .active {
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+    }
+
+    .error {
+        background-color: yellow;
+    }
+    .test{
+        color:blue
+    }
+</style>
+<div id="app">
+    <div v-bind:class="[activeClass,errorClass],{test:isTest}"></div>
+</div>
+
+<body>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                activeClass:'active',
+                errorClass:'error',
+                isTest:true,
+            },
+            methods: {
+                
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
