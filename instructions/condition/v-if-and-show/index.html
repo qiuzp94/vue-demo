@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分支循环结构</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="score>=90">优秀</div>
+        <div v-else-if="score>=80&&score<90">良好</div>
+        <div v-else-if="score>=60&&score<80">一般</div>
+        <div v-else>不及格</div>
+        <div v-show="flag">我是隐藏元素，要点击才出现哦</div>
+        <button v-on:click="handle">点击切换</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                score: 50,
+                flag: false
+            },
+            methods: {
+                handle: function () {
+                    this.flag = !this.flag
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
